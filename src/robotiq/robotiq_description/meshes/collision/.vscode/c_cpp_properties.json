@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ur5/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/ur5/catkin_ws/src/Azure_Kinect_ROS_Driver/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/canopen_402/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/canopen_chain_node/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/canopen_master/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/canopen_motor_node/include/**",
+        "/home/ur5/catkin_ws/src/collada_urdf/collada_parser/include/**",
+        "/home/ur5/catkin_ws/src/collada_urdf/collada_urdf/include/**",
+        "/home/ur5/catkin_ws/src/Universal_Robots_ROS_Driver/controller_stopper/include/**",
+        "/home/ur5/catkin_ws/src/openni2_camera/openni2_camera/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_action_server/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_c_model_control/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_ethercat/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_force_torque_sensor/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_s_model_control/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/socketcan_bridge/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/socketcan_interface/include/**",
+        "/home/ur5/catkin_ws/src/Universal_Robots_ROS_Driver/ur_calibration/include/**",
+        "/home/ur5/catkin_ws/src/fmauch_universal_robot/ur_kinematics/include/**",
+        "/home/ur5/catkin_ws/src/Universal_Robots_ROS_Driver/ur_robot_driver/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

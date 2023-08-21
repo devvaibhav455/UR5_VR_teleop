@@ -1,0 +1,60 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ur5/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/ur5/catkin_ws/src/Azure_Kinect_ROS_Driver/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/canopen_402/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/canopen_chain_node/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/canopen_master/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/canopen_motor_node/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_planners/chomp/chomp_motion_planner/include/**",
+        "/home/ur5/catkin_ws/src/Universal_Robots_ROS_Driver/controller_stopper/include/**",
+        "/home/ur5/catkin_ws/src/geometric_shapes/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_planners/chomp/chomp_interface/include/**",
+        "/home/ur5/catkin_ws/src/moveit_resources/prbt_ikfast_manipulator_plugin/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_ros/benchmarks/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_plugins/moveit_ros_control_interface/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_ros/move_group/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_ros/occupancy_map_monitor/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_ros/robot_interaction/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_ros/moveit_servo/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_setup_assistant/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_plugins/moveit_simple_controller_manager/include/**",
+        "/home/ur5/catkin_ws/src/moveit_visual_tools/include/**",
+        "/home/ur5/catkin_ws/src/openni2_camera/openni2_camera/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_planners/pilz_industrial_motion_planner/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_planners/pilz_industrial_motion_planner_testutils/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_2f_gripper_control/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_action_server/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_c_model_control/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_ethercat/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_force_torque_sensor/include/**",
+        "/home/ur5/catkin_ws/src/robotiq/robotiq_s_model_control/include/**",
+        "/home/ur5/catkin_ws/src/rviz_visual_tools/include/**",
+        "/home/ur5/catkin_ws/src/moveit/moveit_planners/sbpl/core/sbpl_interface/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/socketcan_bridge/include/**",
+        "/home/ur5/catkin_ws/src/ros_canopen/socketcan_interface/include/**",
+        "/home/ur5/catkin_ws/src/srdfdom/include/**",
+        "/home/ur5/catkin_ws/src/StructureSDK-CrossPlatform-0.9/ROS/ros1/include/**",
+        "/home/ur5/catkin_ws/src/tactile_safety/include/**",
+        "/home/ur5/catkin_ws/src/Universal_Robots_ROS_Driver/ur_calibration/include/**",
+        "/home/ur5/ur5_teleop_ws/src/universal_robot/ur_kinematics/include/**",
+        "/home/ur5/catkin_ws/src/ur_modern_driver/include/**",
+        "/home/ur5/catkin_ws/src/Universal_Robots_ROS_Driver/ur_robot_driver/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

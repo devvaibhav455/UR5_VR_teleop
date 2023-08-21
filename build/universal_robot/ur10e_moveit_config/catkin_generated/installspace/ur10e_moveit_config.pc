@@ -1,0 +1,8 @@
+prefix=/home/sid/Documents/UR5_VR_teleop/install
+
+Name: ur10e_moveit_config
+Description: Description of ur10e_moveit_config
+Version: 1.3.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

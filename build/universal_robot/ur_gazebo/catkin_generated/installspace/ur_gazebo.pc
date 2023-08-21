@@ -1,0 +1,8 @@
+prefix=/home/sid/Documents/UR5_VR_teleop/install
+
+Name: ur_gazebo
+Description: Description of ur_gazebo
+Version: 1.3.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

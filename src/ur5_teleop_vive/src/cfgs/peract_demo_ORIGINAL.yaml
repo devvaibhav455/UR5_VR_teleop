@@ -1,0 +1,26 @@
+settings:
+  ask_to_save: False
+  replay_from_prev_pose: False
+
+ros:
+  loop_rate: 10 # Hz
+
+topics:
+  front_rgb: '/kinect_front/sd/image_color_rect'
+  front_depth: '/kinect_front/sd/image_depth_rect'
+  front_camera_info: '/kinect_front/sd/camera_info'
+
+  joy_state: '/vive_right'
+  joy_pose: '/right_controller_as_posestamped'
+
+  joint_states: '/joint_states'
+  target_pose: '/target_gripper'
+
+
+demo:
+  task: 'stack_blocks'
+  save_path: '/catkin_ws/src/dvnets_franka/franka_data'
+  variation: 0
+  episode: 0
+  random_seed: 0
+

@@ -1,0 +1,31 @@
+manipulation:
+  offsets_real:   
+    # REAL ROBOT
+    trans_x: 0.60
+    trans_y: 0.5
+    trans_z: 0.848
+    rot_x: 180.0
+    rot_y: 0.0
+    rot_z: 0.0
+  
+  offsets_sim:
+    # SIMULATION
+    trans_x: -1.5
+    trans_y: -2.0
+    trans_z: 0.0
+    rot_x: 0.0
+    rot_y: -45.0
+    rot_z: 0.0
+
+robot_ws:
+  x_mid: -0.527
+  x_len: 0.4
+  y_mid: -0.005
+  y_len: 0.4
+  z_mid: 0.02
+  z_len: 0.2
+
+sim: 'false'
+
+
+
