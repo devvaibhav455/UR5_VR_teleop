@@ -12,7 +12,7 @@ Installation Guidance
 
 -Install Beta Version of SteamVR on steam.
 -Changing the null driver related stuff:
-1) Go to hidden files in Home, go to .steam    #### WE MSIGHT ALSO NEED TO INSTALL NULL DRIVERS SEPERATELY nOT SURE THOUGH.{dev}
+1) Go to hidden files in Home, go to .steam    
 2) Search for default.vrsettings and change "activateMultipleDrivers": true, "requireHmd": false, "forcedDriver": "null"
 3) Search for default.vrsettings(null driver one) and change "enable": true
 4) there are just 2 default.vrsetting both of them has to be changed like we showed. 
