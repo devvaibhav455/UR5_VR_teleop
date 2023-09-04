@@ -1,116 +1,88 @@
 # UR5_VR_teleop
-Operate UR5 robot using HTC Vive controller
 
+Control a UR5 robot using HTC Vive controllers.
 
-############################################
-Installation Guidance
-############################################
--Ubuntu 20.04 & Ros Noetic 
--Gripper robotiq package
--Follow the steps given in this link for installation of URSIM
-    https://github.com/githubuser0xFFFF/URSim_Install_Guides/tree/lubuntu-2004-ursim-5.12.2
+## Installation Guidance
 
--Install Beta Version of SteamVR on steam.
--Changing the null driver related stuff:
-1) Go to hidden files in Home, go to .steam    
-2) Search for default.vrsettings and change "activateMultipleDrivers": true, "requireHmd": false, "forcedDriver": "null"
-3) Search for default.vrsettings(null driver one) and change "enable": true
-4) there are just 2 default.vrsetting both of them has to be changed like we showed. 
+Before using this package, make sure you have the following prerequisites installed:
 
-#####################################
-Setting Base Station and controller
-#####################################
--Setting Up Base station A and B, Such that they approx 30 Degree angle point towards each othe and the vive controller. Give minimum 60cm distance between the base station and vive controller.
+- Ubuntu 20.04 & ROS Noetic
+- Robotiq gripper package
 
-Steam VR app should show 2 base station and controller been connected with their symbol.
+Follow these steps for installation:
 
+1. Install URSIM by following the instructions provided in [URSim Installation Guide](https://github.com/githubuser0xFFFF/URSim_Install_Guides/tree/lubuntu-2004-ursim-5.12.2).
 
-####################################
-For Calibration
-####################################
-Open cfgs/teleop.yaml
-It contains how the position/calibration for the specific environment should be, can be changed as per the environment conditions. Use Rviz for this calibration task.
+2. Install the Beta Version of SteamVR on Steam.
 
+3. Change the null driver related settings:
+    - Navigate to hidden files in your home directory and go to `.steam`.
+    - Find `default.vrsettings` and make the following changes:
+        - `"activateMultipleDrivers": true`
+        - `"requireHmd": false`
+        - `"forcedDriver": "null"`
+    - Find `default.vrsettings` (the null driver one) and change `"enable": true`.
 
+## Setting Up Base Stations and Controllers
 
-########################
-How to run the System
-########################
-roscore
+1. Set up Base Stations A and B, ensuring they are approximately 30 degrees apart and facing the Vive controller. Maintain a minimum distance of 60cm between the base stations and the Vive controller.
 
-rosparam set use_sim_time false
+2. In the Steam VR app, you should see that 2 base stations and a controller are connected, indicated by their respective symbols.
 
-########################################################
- REAL TESTING ONLY
-########################################################
+## Calibration
 
-Run SteamVR
+For calibration, open `cfgs/teleop.yaml`. This file contains the position/calibration settings for the specific environment, which can be adjusted based on the environmental conditions. Use Rviz for calibration tasks.
 
-roslaunch htc_vive_teleop_stuff vive_tf_joy_and_ps.launch
+## How to Run the System
 
-########################################################
+1. Start ROS core: `roscore`
 
+2. Disable simulation time: `rosparam set use_sim_time false`
 
-source ~/Documents/ur5_teleop_ws/devel/setup.bash
-roslaunch ur5_teleop_vive ur5_bringup.launch 
+### Real Testing
 
+3. Run SteamVR.
 
+4. Launch the HTC Vive teleop package: `roslaunch htc_vive_teleop_stuff vive_tf_joy_and_ps.launch`
 
+5. Source your workspace: `source ~/Documents/ur5_teleop_ws/devel/setup.bash`
 
-########################################################
- SIMULATION TESTING ONLY
-########################################################
+6. Launch the UR5 robot: `roslaunch ur5_teleop_vive ur5_bringup.launch`
 
-/opt/ursim/5.12.2/start-ursim.sh UR5
-#### If you want to use rqt marker based control:
-rosrun rqt_virtual_joy rqt_virtual_joy
+### Simulation Testing
 
-cd ~/Documents/ur5_teleop_ws/src/ur5_teleop_vive/src/vive_sim_test
-python3 dummy_static_tf_pub.py
+7. Start the UR5 simulation: `/opt/ursim/5.12.2/start-ursim.sh UR5`
 
-cd ~/Documents/ur5_teleop_ws/src/htc_vive_teleop_stuff/scripts/
-python3 frame_as_posestamped.py right_controller hmd 30
-##If you want to use vr controller with ursim:
-change the ip address in the code to the ip of the laptop.
-And run same things as real test
+8. If you want to use rqt marker-based control, run: `rosrun rqt_virtual_joy rqt_virtual_joy`
 
- 
-########################################################
- SIMULATION AND REAL TESTING
-########################################################
+9. Run the provided scripts for simulation testing:
+   - `cd ~/Documents/ur5_teleop_ws/src/ur5_teleop_vive/src/vive_sim_test`
+   - `python3 dummy_static_tf_pub.py`
+   - `cd ~/Documents/ur5_teleop_ws/src/htc_vive_teleop_stuff/scripts/`
+   - `python3 frame_as_posestamped.py right_controller hmd 30`
 
+### Simulation and Real Testing
 
-cd ~/Documents/ur5_teleop_ws/src/ur5_teleop_vive/src/
-python3 vive_ur5_teleop.py
+10. Run the UR5 teleop script: `cd ~/Documents/ur5_teleop_ws/src/ur5_teleop_vive/src/ && python3 vive_ur5_teleop.py`
 
-sudo chmod 777 /dev/ttyUSB0
+11. Ensure proper permissions for `/dev/ttyUSB0`: `sudo chmod 777 /dev/ttyUSB0`
 
+12. Install the required Python package: `pip3 install pymodbus==2.1.0`
 
-pip3 install pymodbus==2.1.0
-rosrun robotiq_c_model_control CModelRtuNode.py /dev/ttyUSB0
+13. Run the Robotiq gripper control node:
+    - Use `roscd` to navigate to `robotiq_c_model_control/nodes/`
+    - Execute `python3 CModelRtuNode.py /dev/ttyUSB0`
+    - If it doesn't work, go to the directory and run `python3 CModelRtuNode.py /dev/ttyUSB0`
 
-OR
+14. For recording data, use `rosbag record` with the `/ee_pose` topic.
 
-source ~/Documents/ur5_teleop_ws/devel/setup.bash
-roscd robotiq_c_model_control
-cd nodes/
-python3 CModelRtuNode.py /dev/ttyUSB0
-# If it doesn't work, need to go to the directory and run using python3 CModelRtuNode.py /dev/ttyUSB0
+## Postprocessing Data
 
-For recording the data rosbag record the /ee_pose topic.
+To analyze data, run the `2cm_gap.py` script, which prints data after every 2 cm of travel from the current pose to the goal pose. The script is located in `~/UR5_VR_teleop/src/ur5_teleop_vive/src`.
 
-
-
-######################################
-For Postprocessing data 
-######################################
-
-we should run 2cm_gap.py 
-which will print the data after every 2 cm of travel from current pose to the goal pose. 
-~/UR5_VR_teleop/src/ur5_teleop_vive/src
-
-
-
+To follow a trajectory using the robot class, run:
+```bash
 source ~/Documents/ur5_teleop_ws/devel/setup.bash
 cd ~/Documents/ur5_teleop_ws/src/ur5_teleop_vive/src/
 python3 ur_follow_using_class.py
+
