@@ -1,8 +1,0 @@
-prefix=/home/sid/Documents/UR5_VR_teleop/devel
-
-Name: robotiq_c2_model_visualization
-Description: Description of robotiq_c2_model_visualization
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

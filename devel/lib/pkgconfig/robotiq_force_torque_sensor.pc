@@ -1,8 +1,0 @@
-prefix=/home/sid/Documents/UR5_VR_teleop/devel
-
-Name: robotiq_force_torque_sensor
-Description: Description of robotiq_force_torque_sensor
-Version: 1.0.0
-Cflags: -I/home/sid/Documents/UR5_VR_teleop/devel/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime std_msgs

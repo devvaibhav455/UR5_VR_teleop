@@ -1,8 +1,0 @@
-prefix=/home/sid/Documents/UR5_VR_teleop/devel
-
-Name: robotiq_joint_state_publisher
-Description: Description of robotiq_joint_state_publisher
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp roslib sensor_msgs robotiq_s_model_control

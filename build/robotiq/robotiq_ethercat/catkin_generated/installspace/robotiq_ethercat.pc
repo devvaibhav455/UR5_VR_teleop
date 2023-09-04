@@ -1,8 +1,0 @@
-prefix=/home/sid/Documents/UR5_VR_teleop/install
-
-Name: robotiq_ethercat
-Description: Description of robotiq_ethercat
-Version: 0.1.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lrobotiq_ethercat
-Requires: roscpp soem

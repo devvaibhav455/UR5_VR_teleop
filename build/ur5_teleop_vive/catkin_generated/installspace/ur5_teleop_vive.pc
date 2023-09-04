@@ -1,8 +1,0 @@
-prefix=/home/sid/Documents/UR5_VR_teleop/install
-
-Name: ur5_teleop_vive
-Description: Description of ur5_teleop_vive
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: geometry_msgs rospy sensor_msgs std_msgs visualization_msgs

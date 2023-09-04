@@ -1,8 +1,0 @@
-prefix=/home/sid/Documents/UR5_VR_teleop/devel
-
-Name: robotiq_action_server
-Description: Description of robotiq_action_server
-Version: 0.1.0
-Cflags: -I/home/sid/Documents/UR5_VR_teleop/src/robotiq/robotiq_action_server/include
-Libs: -L${prefix}/lib 
-Requires: actionlib actionlib_msgs robotiq_c_model_control roscpp
