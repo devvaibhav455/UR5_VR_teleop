@@ -32,6 +32,14 @@ Follow these steps for installation:
     - There should be one more `default.vrsettings` corresponding to `"driver_null"`, open it and enable the null driver by setting
         - `"enable": true`
 
+5.  Git clone this repo and build the catkin workspace
+    - `cd ~/Documents/`
+    - `mkdir ur5_teleop_ws && cd ur5_teleop_ws/`
+    - `mkdir src && cd src/`
+    - `git clone https://github.com/devvaibhav455/UR5_VR_teleop.git .`
+    - `cd .. &&  catkin_make`
+    - `source ~/Documents/ur5_teleop_ws/devel/setup.bash`
+
 ## Setting Up Base Stations and Controllers
 
 1. Set up Base Stations - Left (Channel C) and Right (Channel B), ensuring they are pointing 30 degrees down towards the floor and facing the Vive controller. Maintain a minimum distance of ~50cm between the base stations and the Vive controller. Otherwise, the Base stations might not track the controller.
