@@ -2,9 +2,13 @@
 
 Control a UR5 robot using HTC Vive controller.
 
+[![Project Demo](https://img.youtube.com/vi/VDcqpWs4asI/0.jpg)](https://www.youtube.com/watch?v=VDcqpWs4asI)
+
+## Features
+
 ![Image Alt Text](./images/features.jpg)
 
-## Installation Guidance
+## Installation and Execution Guidance
 
 Before using this package, make sure you have the following prerequisites installed:
 
