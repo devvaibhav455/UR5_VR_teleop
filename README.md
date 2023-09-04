@@ -114,11 +114,13 @@ Gripper's light should change to Blue.
 14. For recording data, use `rosbag record` with the `/ee_pose` topic.
 
 ## Move the robot
-`source ~/Documents/ur5_teleop_ws/devel/setup.bash`
-`cd ~/Documents/ur5_teleop_ws/src/ur5_teleop_vive/src/`
 
-Remember to change your robot's IP before running the script
-`python3 ur_follow_using_class.py`
+15. `source ~/Documents/ur5_teleop_ws/devel/setup.bash`
+
+16. `cd ~/Documents/ur5_teleop_ws/src/ur5_teleop_vive/src/`
+
+17. Remember to change your robot's IP in the script before running it
+    - `python3 ur_follow_using_class.py`
 
 The code is self explainable. However, if you still need any help. Please feel free to raise a question/ bug on Github and I will try my best to respond it ASAP.
 
@@ -131,7 +133,7 @@ To analyze data, run the `2cm_gap.py` script, which prints data after every 2 cm
 
 ## Debug tips
 
-Sometimes, RTDE connection is not closed successfully if CTRL+C is pressed for `ur_follow_using_class.py`. In that case, you might want to run `close_robot.py`, try to emergency stop the robot/ reboot it using the teach pendant.
+Sometimes, RTDE connection is not closed successfully if CTRL+C is pressed for `ur_follow_using_class.py`. In that case, you might want to run `close_robot.py`, try to emergency stop the robot/ reboot it using the teach pendant, and re-running `ur_follow_using_class.py`
 
 ## Authors
 - [Dev Vaibhav](https://github.com/devvaibhav455)
