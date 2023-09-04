@@ -13,7 +13,7 @@ Before using this package, make sure you have the following prerequisites instal
 
 Follow these steps for installation:
 
-1. Install URSIM by following the instructions provided in [URSim Installation Guide](https://github.com/githubuser0xFFFF/URSim_Install_Guides/tree/lubuntu-2004-ursim-5.12.2).
+1. Install URSIM by following the instructions provided in [URSim Installation Guide](https://github.com/githubuser0xFFFF/URSim_Install_Guides/tree/lubuntu-2004-ursim-5.12.2). You may ignore the `net-statistics` part. Just installing deb packages should be good enough
 
 2. Install the Steam app for Ubuntu (https://linuxhint.com/install-steamos-on-ubuntu/ )
 
@@ -34,15 +34,22 @@ Follow these steps for installation:
 
 2. In the Steam VR app, you should see that 2 base stations and a controller are connected, indicated by their respective symbols.
 
+One square icon indicating that one base station is detected. When two are connected, two square icons should light up.
+
 ![Image Alt Text](./images/steamvr_beta_working.png)
-*One square icon indicating that one base station is detected. When two are connected, two square icons should light up.*
+
 
 If everything is working fine, the controller icon should not blink and two square icons (one for each base station) should light up.
+
+![Image Alt Text](./images/lab_setup.jpg)
+*You may take this image as a reference*
 
 ## How to quickly test if the controller is being tracked by the base stations or not?
 
 1. `cd triad_openvr`
-2. `python3 controller_test.py` It should show 6 DOF pose information in real time.
+2. `python3 controller_test.py` 
+
+It should show 6 DOF pose information in real time.
 
 ![Image Alt Text](./images/triad_openvr_working.png)
 
@@ -53,8 +60,6 @@ For calibration, open `ur5_teleop_vive/src/cfgs/teleop.yaml`. This file contains
 
 The HTC Vive Controller publishes the 6DOF pose but it might appear very far away from the robot in rviz. To overcome this, rotational and translational offsets are applied. You may adjust these values and see which set of numbers work for you. Try setting some values, stop and re-run `vive_ur5_teleop.py` to see the change in RViz until you see the marker's position close to the robot.
 
-![Image Alt Text](./images/lab_setup.jpg)
-*You may take this image as a reference*
 
 ## How to Run the System?
 
@@ -62,20 +67,21 @@ The HTC Vive Controller publishes the 6DOF pose but it might appear very far awa
 
 2. Disable simulation time: `rosparam set use_sim_time false`
 
-### Real robot's Testing
+### Follow these steps for Real robot's Testing only
 
-3. Open SteamVR (if it updates, cancel it otherwise need to change the vrsettings file again).
+3. Open SteamVR (if it updates, cancel it otherwise need to change the vrsettings file again). If you figure out a way to prevent it from updating, please let me know as well!
 
-4. Launch the HTC Vive teleop package: `roslaunch htc_vive_teleop_stuff vive_tf_joy_and_ps.launch`
+4. Source your workspace: `source ~/Documents/ur5_teleop_ws/devel/setup.bash`
 
-5. Source your workspace: `source ~/Documents/ur5_teleop_ws/devel/setup.bash`
+5. Launch the HTC Vive teleop package: `roslaunch htc_vive_teleop_stuff vive_tf_joy_and_ps.launch`
+
 
 6. Launch the UR5 robot package: `roslaunch ur5_teleop_vive ur5_bringup.launch`
 It should open gazebo (ignore the robot's condition, it won't update) and RViz
 
-### Simulation Testing
+### Follow these steps for Simulation Testing only
 
-7. Start the UR5 simulation: `/opt/ursim/5.12.2/start-ursim.sh UR5`
+7. Start the UR5 simulation (URSIM): `/opt/ursim/5.12.2/start-ursim.sh UR5`
 
 8. If you want to test using a virtual joystick, run: `rosrun rqt_virtual_joy rqt_virtual_joy`
 
@@ -85,7 +91,9 @@ It should open gazebo (ignore the robot's condition, it won't update) and RViz
    - `cd ~/Documents/ur5_teleop_ws/src/htc_vive_teleop_stuff/scripts/`
    - `python3 frame_as_posestamped.py right_controller hmd 30`
 
-### Simulation and Real Testing
+These steps perform the same job as that of `vive_tf_joy_and_ps.launch` but by simulation the controller and following a trajectory defined in `dummy_static_tf_pub.py`
+
+### Follow these steps for for Simulation/ Real Testing both
 
 10. Run the UR5 teleop script: `cd ~/Documents/ur5_teleop_ws/src/ur5_teleop_vive/src/ && python3 vive_ur5_teleop.py` It will publish the HTC Vive controller's position to see in RViz.
 
@@ -113,7 +121,7 @@ The code is self explainable. However, if you still need any help. Please feel f
 ![Image Alt Text](./images/controller_config.jpg)
 *Button configuration to control the robot*
 
-## Postprocessing Data
+## Postprocessing Data (might need some work)
 
 To analyze data, run the `2cm_gap.py` script, which prints data after every 2 cm of travel from the current pose to the goal pose. The script is located in `~/UR5_VR_teleop/src/ur5_teleop_vive/src`.
 
@@ -124,5 +132,13 @@ Sometimes, RTDE connection is not closed successfully if CTRL+C is pressed for `
 ## Authors
 - [Dev Vaibhav](https://github.com/devvaibhav455)
 - [Siddharth Maheshwari](https://github.com/Sid0225)
+
+## References
+- https://www.roadtovr.com/how-to-use-the-htc-vive-tracker-without-a-vive-headset/
+- https://github.com/uts-magic-lab/htc_vive_teleop_stuff
+- https://github.com/ros-industrial/robotiq
+- https://github.com/ros-industrial/universal_robot
+
+
 
 
